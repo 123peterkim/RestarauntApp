@@ -1,0 +1,39 @@
+<div id='content' ng-app='MyTutorialApp' ng-controller='AddRestaurantController'>
+
+    <ul ng-model='selectedRestaurant'>
+        <li ng-repeat='obj in restaurants'>
+            <button ng-click="setValueOfIdx($index)">Details</button>
+            {{obj.name}}
+        </li>
+    </ul>
+
+    <ul ng-model='selectedDetails'>
+        <li ng-repeat='label in restaurants[idx].items'>{{label}}</li>
+    </ul>
+
+    <form class="form-horizontal" ng-submit="createRestaurant()" ng-init="populateRestaurants()"> 
+    <div class="control-group"> 
+
+      <label class="control-label" for="name">Restaurant Name</label> 
+      <div class="controls"> 
+        <input type="text" ng-model="restaurant.name" id="name" placeholder="Name"> 
+      </div>
+
+      <label class="control-label" for="phone">Phone Number</label> 
+      <div class="controls"> 
+        <input type="text" ng-model="restaurant.phone" id="phone" placeholder="Phone Number"> 
+      </div>
+
+      <div class="controls">
+        <button ng-click="addNewRestItem()">Add Item</button>
+        <input id="items" type="text" ng-model="restaurant.items" value="" />
+      </div>
+    </div> 
+    <div class="control-group"> 
+      <div class="controls"> 
+        <input type="submit" class="btn"> 
+      </div> 
+    </div> 
+  </form>
+
+</div>

@@ -1,0 +1,33 @@
+<h1>Account Management</h1>
+<p>&nbsp;</p>
+<div>
+    <form name="myForm" action="/updateaccount" method="post">
+        <div class="control-group">
+            <label for='oldemail'>Old Email</label>
+            <input id="oldemail" type="text" name="oldemail" placeholder="Email">
+        </div>
+        <div class="control-group">
+            <label for='newemail'>New Email</label>
+            <input id="newemail" type="text" name="newemail" placeholder="Email">
+        </div>
+        <div class="control-group">
+            <label for='oldpassword'>Old Password</label>
+            <input id="oldpassword" type="password" name="oldpassword" placeholder="Password">
+        </div>
+        <div class="control-group">
+            <label for='newpassword1'>New Password</label>
+            <input id="newpassword1" type="password" name="newpassword1" placeholder="Password" ng-model="newpassword1" ng-required="">
+        </div>
+        <div class="control-group">
+            <label for='newpassword2'>Confirm New Password</label>
+            <input id="newpassword2" type="password" name="newpassword2" placeholder="Password" ng-model="newpassword2" ng-required="" pw-check="newpassword1">
+        </div>
+        <div class="msg-block" ng-show="myForm.$error">
+            <span class="msg-error" ng-show="myForm.newpassword2.$error.pwmatch">Passwords don't match.</span>
+        </div>
+        <div>&nbsp;</div>
+        <div class="control-group">
+            <button class="btn btn-primary" type="submit">Update Changes</button>
+        </div>
+    </form>
+</div>

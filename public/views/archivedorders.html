@@ -1,0 +1,17 @@
+<form data-ng-controller="IndexController">
+    <h1 mean-token="'home-default'">Pending Order</h1>
+    <input type="text" ng-model="text" name="text" id="total" placeholder="Total of Order"/>
+
+    <ul ng-model='selectedDetails'>
+        <li ng-repeat='label in archivedOrder[idx].items'>{{label}}</li>
+    </ul>
+
+    <h5>Add More to Order</h5>
+    <div class="controls">
+        <button ng-click="addNewOrderItem()">Add Item</button>
+        <input id="items" type="text" ng-model="archivedOrder.items" value="" />
+        <input type="text" ng-model="extraItemText" name="person" placeholder="Person:"/>
+    </div>
+
+    <input type="submit" id="submit" value="Archive Order">
+</form>

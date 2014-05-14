@@ -1,0 +1,99 @@
+                //Push restaurant items into restItems array
+//                for (var x = 0; x < $scope.restaurantList.length; x++) {
+//                    for (var i = 0; i < $scope.restaurantList[x].items.length; i++) {
+//                        $scope.restItems.push($scope.restaurantList[x].items[i]);
+////                        console.log("Restaurant items pushed " + $scope.data[x].items[i]);
+//                    }
+//                }
+//            })
+
+
+//            $http({method: 'GET', url: 'mongodb://ngff-dev/'}).
+//                success(function(data, status, headers, config) {
+//                    // this callback will be called asynchronously
+//                    // when the response is available
+//                    console.log("Success" + data);
+//                }).
+//                error(function(data, status, headers, config) {
+//                    // called asynchronously if an error occurs
+//                    // or server returns response with an error status.
+//                    console.log('Failure' + status);
+//                    console.log("config: "+config);
+//                });
+
+//            return $resource('http://localhost\\:3000/realmen/:entryId', {}, {
+//                query: {method:'GET', params:{entryId:''}, isArray:true},
+//                post: {method:'POST'},
+//                update: {method:'PUT', params: {entryId: '@entryId'}},
+//                remove: {method:'DELETE'}
+//            });
+
+//            var collection = db.get('restaurants');
+//            collection.find({},{},function(err, docs) {
+//                collection.each(function(err, ))
+//            });
+
+//            var oneRest;
+//            while(docs.hasNext()) {
+//                oneRest = docs.next();
+//                restaurants.push(oneRest);
+//            }
+
+            // CREATE
+//            $scope.createNewRestaurant = function() {
+//                event.preventDefault()
+//
+//                console.log("Added restaurant is " + $scope.restaurant);
+////                console.log("Item 1 is " + $scope.restaurant.item[0])
+////                console.log("Restaurant name is " + restaurant.restaurant)
+//
+//                var restaurant = new Restaurant({
+//                    restaurant: this.newRestaurant,
+//                    phonenumber: this.phoneNumber,
+//                    item: [
+//                        $scope.restItems
+//                    ]
+//                });
+//
+//                $scope.restaurants.push(restaurant);
+//
+//                restaurant.$save(function (response) {
+//                    $location.path('restaurants');
+//                });
+//
+//                this.restaurant.restaurant = "";
+//                this.restaurant.item = "";
+//
+//            }
+//
+
+//
+//            // FIND ONE
+//            $scope.findOne = function () {
+//                Restaurant.get({ restaurantId: $routeParams.restaurantId }, function (restaurant) {
+//                    $scope.restaurant = restaurant;
+//                });
+//            };
+//
+//            // UPDATE/MODIFY
+//            $scope.update = function () {
+//                var restaurant = $scope.restaurant;
+//                restaurant.$update(function () {
+//                    $location.path('restaurant');
+//                });
+//            };
+//
+//            // DELETE
+//            $scope.destroy = function (league) {
+//                league.$remove();
+//                for (var i in $scope.leagues) {
+//                    if ($scope.leagues[i] == league) {
+//                        $scope.leagues.splice(i, 1)
+//                    }
+//                }
+//            };
+
+//            $scope.restaurantList = function($index) {
+//                $scope.restaurants = Restaurants.restaurants;
+//
+//            }
