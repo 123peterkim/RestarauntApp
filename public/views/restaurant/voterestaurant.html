@@ -1,6 +1,6 @@
 <div ng-controller="VoteController">
     <div class="row">
-        <div class="col-md-6">
+        <div class="span6">
             <div ng-init="find()">
                 <ul class="unstyled">
                     <h2>Restaurants</h2>
@@ -15,8 +15,6 @@
                     </form>
                 </ul>
             </div>
-        </div>
-        <div class="col-md-6">
             <div ng-init="finditems()">
             <input type="button" class="btn" value="Show Menu" ng-click="menu()">
                 <div ng-show="showmenu == 1">
@@ -27,6 +25,26 @@
                     <input type="text" placeholder="Special Requests" value="{{selecteditem}}">
                 </div>
             </div>
+        </div>
+        <div class="span6" ng-controller="OrderController">
+            <form class="form-horizontal" ng-submit="create()">
+                <div class="control-group">
+                    <label class="control-label" for="menuItem">Menu Item</label>
+                    <div class="controls">
+
+                        <input type="text" ng-model="order.menuItem" ng-value="selecteditem" id="menuitem" placeholder="Menu Item">
+                    </div>
+                    <label class="control-label" for="specialrequest">Special Request</label>
+                    <div class="controls">
+                        <input type="text" ng-model="order.specialRequest" id="specialrequest" placeholder="Special Request">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <input type="submit" class="btn">
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
