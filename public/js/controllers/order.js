@@ -10,7 +10,7 @@ window.angular.module('ngff.controllers.order', [])
                 });
 
                 order.$save(function (response) {
-                    $location.path("order/" + response._id);
+                    $location.path("order/");
                 });
 
                 this.order.name = "";
