@@ -22,17 +22,15 @@
                         <input type="radio" name="items" ng-model="$parent.selecteditem" ng-value="items" id="{{items}}">
                         {{items}}
                     </label>
-                    <input type="text" placeholder="Special Requests" value="{{selecteditem}}">
                 </div>
             </div>
         </div>
         <div class="span6" ng-controller="OrderController">
             <form class="form-horizontal" ng-submit="create()">
                 <div class="control-group">
-                    <label class="control-label" for="menuItem">Menu Item</label>
+                    <label class="control-label" for="menuitem">Menu Item</label>
                     <div class="controls">
-
-                        <input type="text" ng-model="order.menuItem" ng-value="selecteditem" id="menuitem" placeholder="Menu Item">
+                        <input type="text" ng-model="selecteditem" name="" id="menuitem" placeholder="Menu Item">
                     </div>
                     <label class="control-label" for="specialrequest">Special Request</label>
                     <div class="controls">

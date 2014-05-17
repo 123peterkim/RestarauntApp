@@ -5,7 +5,7 @@ window.angular.module('ngff.controllers.order', [])
 
             $scope.create = function () {
                 var order = new Order({
-                    menuItem: this.order.menuItem,
+                    menuItem: this.selecteditem,
                     specialRequest: this.order.specialRequest
                 });
 
