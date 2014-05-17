@@ -19,7 +19,9 @@ var UserSchema = new Schema({
   admin: String,
   provider: String,
   hashed_password: String,
-  salt: String
+  salt: String,
+  restaurantVoteClickCount: Number,
+  restaurantItemClickCount: Number
 })
 
 /**

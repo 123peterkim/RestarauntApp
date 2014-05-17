@@ -1,0 +1,32 @@
+<div ng-controller="VoteController">
+    <div class="row">
+        <div class="col-md-6">
+            <div ng-init="find()">
+                <ul class="unstyled">
+                    <h2>Restaurants</h2>
+                    <form ng-submit="vote()">
+                        <label ng-repeat="restaurant in restaurantslist" for="{{restaurant.name}}">
+                            <input type="radio" name="restaurant" ng-model="$parent.selectedrestaurant" ng-value="restaurant.name" id="{{restaurant.name}}">
+                            {{restaurant.name}}
+                        </label>
+                        <input ng-show="restaurantVoteClickCount == 0" type="submit" class="btn">
+
+                        <input ng-hide="restaurantVoteClickCount == 0" type="submit" class="btn" disabled>
+                    </form>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div ng-init="finditems()">
+            <input type="button" class="btn" value="Show Menu" ng-click="menu()">
+                <div ng-show="showmenu == 1">
+                    <label ng-repeat="items in itemslist" for="{{items}}">
+                        <input type="radio" name="items" ng-model="$parent.selecteditem" ng-value="items" id="{{items}}">
+                        {{items}}
+                    </label>
+                    <input type="text" placeholder="Special Requests" value="{{selecteditem}}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -33,6 +33,14 @@ window.app.config(['$routeProvider', function($routeProvider) {
     {
         templateUrl: 'views/order/view.html'
     })
+    .when('/voterestaurant',
+    {
+        templateUrl: 'views/restaurant/voterestaurant.html'
+    })
+    .when('/voterestaurant/:restaurantname',
+    {
+        templateUrl: 'views/restaurant/voterestaurant.html'
+    })
 	.otherwise({redirectTo: '/'});
 }]);
 

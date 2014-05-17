@@ -56,7 +56,22 @@ exports.signout = function (req, res) {
  */
 
 exports.session = function (req, res) {
-    console.log("User session = " + User.session);
+    console.log("1User session = " + User.session);
+    console.log("2User name = " + req.user);
+    console.log("5User name = " + req.user.username);
+
+    // req.user.restaurantVoteClickCount = 0;
+    // console.log("restaurantVoteClickCount = " + 
+    //   req.user.restaurantVoteClickCount);
+
+    // req.user.restaurantItemClickCount = 0;
+    // console.log("restaurantItemClickCount = " + 
+    //   req.user.restaurantItemClickCount);
+
+    // globalRestaurantVoteClickCount["JohnSmith"] = 0;
+    // console.log("5globalRestaurantVoteClickCount = " + 
+    //   globalRestaurantVoteClickCount["JohnSmith"])
+    // globalRestaurantItemClickCount["JohnSmith"] = 0;
   res.redirect('/')
 }
 
@@ -111,4 +126,11 @@ exports.user = function (req, res, next, id) {
 
 exports.accountmanagement = function (req, res) {
   res.render('users/accountmanagement')
+}
+
+exports.update = function(req, res){
+
+  vote.save(function(err) {
+    res.jsonp(1)
+  })
 }

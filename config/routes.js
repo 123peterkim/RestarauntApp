@@ -33,6 +33,7 @@ module.exports = function (app, passport, auth) {
     app.put('/restaurants/:restaurantId', restaurants.update)
     app.del('/restaurants/:restaurantId', restaurants.destroy)
 
+
     app.param('restaurantId', restaurants.restaurant)
 
     //order crud
@@ -50,5 +51,6 @@ module.exports = function (app, passport, auth) {
 
     // account management route
     app.get('/accountmanagement', users.accountmanagement)
+    app.put('/voterestaurant/:restaurantname', users.update)
     // app.post('/')
 }
