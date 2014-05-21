@@ -5,6 +5,7 @@ window.angular.module('ngff.controllers.order', [])
 
             $scope.create = function () {
                 var order = new Order({
+                    selectedrestaurant: this.selectedrestaurant,
                     menuItem: this.selecteditem,
                     specialRequest: this.order.specialRequest
                 });
@@ -12,14 +13,31 @@ window.angular.module('ngff.controllers.order', [])
                 order.$save(function (response) {
                     $location.path("order/");
                 });
-
-                this.order.name = "";
             };
 
             $scope.find = function (query) {
                 Order.query(query, function (order) {
                     $scope.order = order;
                 });
+            };
+
+            $scope.destroyOrder = function (order) {
+                order.$remove();
+                    for (var item in $scope.order) {
+                    if ($scope.order[item] == order) {
+                    $scope.order.splice(item, 1)
+                    }
+                }
+            };
+
+            $scope.destroyAll = function (order) {
+                order.$remove();
+                    for (var item in $scope.order) {
+                    if ($scope.order[item] == order) {
+                    $scope.order.splice(item, order.length);
+                    }
+                }
+                console.log(order)
             };
 
             $scope.findOne = function () {

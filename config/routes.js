@@ -41,8 +41,22 @@ module.exports = function (app, passport, auth) {
     app.get('/order', order.all)
     app.post('/order', auth.requiresLogin, order.create)
     app.get('/order/:orderId', order.show)
+    app.del('/order/:orderId', auth.requiresLogin, order.destroyOrder)
+    app.del('/order', auth.requiresLogin, order.destroy)
 
     app.param('orderId', order.order)
+
+
+// Order archive CRUD
+var orderarchive = require('../app/controllers/orderarchives')  
+  app.get('/orderarchive', orderarchive.all)
+  app.post('/orderarchive', auth.requiresLogin, orderarchive.create)
+  app.get('/orderarchive/:orderarchiveId', orderarchive.show)
+  app.put('/orderarchive/:orderarchiveId', auth.requiresLogin, orderarchive.update)
+  app.del('/orderarchive/:orderarchiveId', auth.requiresLogin, orderarchive.destroy)
+ 
+  app.param('orderarchiveId', orderarchive.orderarchive)
+//Order archive CRUD end
 
 
     // home route

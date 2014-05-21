@@ -34,3 +34,26 @@ exports.all = function(req, res){
         }
     });
 }
+
+exports.destroyOrder = function(req, res){
+  var order = req.order
+  order.remove()//function(err){
+    // if (err) {
+    //   res.render('error', {status: 500});
+    // }  else {
+    //   res.jsonp(1);
+    // }
+  //})
+}
+
+exports.destroy = function(req, res){
+  var order = req.order
+  order.remove(function(err){
+    if (!err) {
+      console.log("removed");
+      return res.send('');
+    } else {
+      console.log(err);
+    }
+  })
+}

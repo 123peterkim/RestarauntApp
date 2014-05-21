@@ -25,6 +25,10 @@ window.app.config(['$routeProvider', function($routeProvider) {
     {
         templateUrl: 'views/order/list.html'
     })
+    .when('/order/delete',
+    {
+        templateUrl: 'views/order/list.html'
+    })
     .when('/order/create',
     {
         templateUrl: 'views/order/create.html'
@@ -41,6 +45,22 @@ window.app.config(['$routeProvider', function($routeProvider) {
     {
         templateUrl: 'views/restaurant/voterestaurant.html'
     })
+    .when('/orderarchive', 
+  { 
+    templateUrl: 'views/orderarchive/list.html' 
+  })
+  .when('/orderarchive/create', 
+  { 
+    templateUrl: 'views/orderarchive/create.html' 
+  })  
+  .when('/orderarchive/:orderarchiveId/edit', 
+  { 
+    templateUrl: 'views/orderarchive/edit.html' 
+  })
+  .when('/orderarchive/:orderarchiveId', 
+  { 
+    templateUrl: 'views/orderarchive/view.html' 
+  })
 	.otherwise({redirectTo: '/'});
 }]);
 
