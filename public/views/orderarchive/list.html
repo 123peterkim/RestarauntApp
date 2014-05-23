@@ -1,0 +1,10 @@
+<div ng-controller="OrderArchiveController" ng-init="find()">
+  <ul class="unstyled">
+    <h2>Archived Orders</h2>
+    <li ng-repeat="orderarchive in orderarchive">
+      <a href="#!/orderarchive/{{ orderarchive._id }}">{{orderarchive.date}}, {{orderarchive.selectedrestaurant}}</a>
+      (<a href="#!/orderarchive/{{ orderarchive._id }}/edit">Edit</a>)
+      (<a href="" ng-click="destroy(orderarchive)" >Remove</a>)
+    </li>
+  </ul>
+</div>

@@ -1,10 +1,32 @@
 <div ng-controller="OrderController" ng-init="find()">
     <ul class="unstyled">
         <h2>Current Orders</h2>
-        <li ng-repeat="order in order">
-            <a href="#!/order/{{ order._id }}">{{order.user.name}},  {{order.menuItem}},  {{order.specialRequest}}</a>
-        </li>
     </ul>
-    <br>
-    <a href="#!/order/create">Create a new order</a>
+    <div ng-controller="OrderArchiveController">
+	  <form class="form-horizontal" ng-submit="create()">
+	    <div class="control-group">
+	      <label class="control-label" for="name"></label>
+	      <div class="controls">
+		      <ul>
+			      	<li>
+			      	<input type="text" ng-model="order[0].selectedrestaurant" id="name" placeholder="Name" disabled>
+			      	</li>
+			       <li ng-repeat="order in order">
+					    <div >
+					    <span>{{order.user.name}}</span>		       
+				        <input type="text" ng-model="order.menuItem" id="name" placeholder="Name" disabled>
+				        <input type="text" ng-model="order.specialRequest" id="name" placeholder="Name" disabled> 
+				        (<a href="" ng-click="destroyOrder(order)">Remove</a>)
+				        </div>
+		        	</li>
+		      </ul>
+	      </div>
+	    </div>
+	    <div class="control-group">
+	      <div class="controls">
+	        <input type="submit" class="btn">
+	      </div>
+	    </div>
+	  </form>
+	</div>
 </div>

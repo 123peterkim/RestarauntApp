@@ -4,6 +4,7 @@ var mongoose = require('mongoose')
     , Schema = mongoose.Schema;
 
 var OrderSchema = new Schema({
+	selectedrestaurant : {type: String},
     menuItem: {type: String},
     specialRequest: {type: String},
 
