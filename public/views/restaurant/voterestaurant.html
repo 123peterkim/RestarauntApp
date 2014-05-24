@@ -26,25 +26,32 @@
             </div>
         </div>
         <div class="span6" ng-controller="OrderController">
-            <form class="form-horizontal" ng-submit="create()">
-                <div class="control-group">
-                    <label class="control-label" for="menuitem">Menu Item</label>
-                    <div class="controls">
-                        <input type="text" ng-model="selectedrestaurant" name="" id="selectedrestaurant" placeholder="selectedrestaurant" disabled>
+            <div ng-init="itemVoteCount()">
+                <form class="form-horizontal" ng-submit="create()">
+                    <div class="control-group">
+                        <label class="control-label" for="menuitem">Menu Item</label>
+                        <div class="controls">
+                            <input type="text" ng-model="selectedrestaurant" name="" id="selectedrestaurant" placeholder="selectedrestaurant" disabled>
+                        </div>
+                        <div class="controls">
+                            <input type="text" ng-model="selecteditem" name="" id="menuitem" placeholder="Menu Item" disabled>
+                        </div>
+                        <label class="control-label" for="specialrequest">Special Request</label>
+                        <div class="controls">
+                            <input type="text" ng-model="specialRequest" id="specialrequest" placeholder="Special Request">
+                        </div>
                     </div>
-                    <div class="controls">
-                        <input type="text" ng-model="selecteditem" name="" id="menuitem" placeholder="Menu Item" disabled>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input ng-show="itemVoteClickCount == 0" type="submit" class="btn">
+
+                            <input ng-hide="itemVoteClickCount == 0" type="submit" class="btn" disabled>
+                        </div>
                     </div>
-                    <label class="control-label" for="specialrequest">Special Request</label>
-                    <div class="controls">
-                        <input type="text" ng-model="order.specialRequest" id="specialrequest" placeholder="Special Request">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <div class="controls">
-                        <input type="submit" class="btn">
-                    </div>
-                </div>
+                </form>
+            </div>
+            <form ng-submit="reset()">
+                <input type="submit" class="btn">
             </form>
         </div>
     </div>

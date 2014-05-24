@@ -24,6 +24,12 @@ block auth
           input#admin(type='checkbox', name='admin', value='1')
 
     .control-group
+      input#restaurantVoteClickCount(type='hidden', name="restaurantVoteClickCount", value=0)
+
+    .control-group
+      input#restaurantItemClickCount(type='hidden', name="restaurantItemClickCount", value=0)
+
+    .control-group
       button.btn.btn-primary(type='submit') Sign up
       &nbsp;
       | or&nbsp;

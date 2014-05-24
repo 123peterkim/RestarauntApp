@@ -61,6 +61,10 @@ window.app.config(['$routeProvider', function($routeProvider) {
   { 
     templateUrl: 'views/orderarchive/view.html' 
   })
+//  .when('/signin',
+//  {
+//    templateUrl: 'views/users/signin.html'
+//  })
 	.otherwise({redirectTo: '/'});
 }]);
 

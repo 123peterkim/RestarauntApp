@@ -1,22 +1,25 @@
 window.angular.module('ngff.controllers.vote', [])
-    .controller('VoteController', ['$scope', '$resource', '$routeParams','$location', '$http', 'Global', 'Restaurant',
-        function($scope, $resource, $routeParams, $location, $http, Global, Restaurant) {
+    .controller('VoteController', ['$scope', '$resource', '$routeParams','$location', '$http', 'Global', 'Restaurant', '$cookieStore',
+        function($scope, $resource, $routeParams, $location, $http, Global, Restaurant, $cookieStore) {
 
 
             $scope.find = function (query) {
-                Restaurant.query(query, function (restaurantslist) {
-                    $scope.restaurantslist = restaurantslist;
-                });
-                $scope.restaurantVoteClickCount = globalRestaurantVoteClickCount["JohnSmith"];
-                console.log("restaurantVoteClickCount = " + $scope.restaurantVoteClickCount);
+                if ($cookieStore.get('restaurantVote') != 1) {
+                    Restaurant.query(query, function (restaurantslist) {
+                        $scope.restaurantslist = restaurantslist;
+                    });
+                    $scope.restaurantVoteClickCount = globalRestaurantVoteClickCount["JohnSmith"];
+                    console.log("restaurantVoteClickCount = " + $scope.restaurantVoteClickCount);
+                }
             };
 
             $scope.finditems = function (query) {
-                Restaurant.query(query, function (itemslist) {
-                    $scope.itemslist = itemslist[globalHighestVote].items;
-                });
-            //     $scope.restaurantItemClickCount = globalRestaurantItemClickCount["JohnSmith"];
-            //     console.log("restaurantItemClickCount = " + $scope.restaurantItemClickCount);
+                if ($cookieStore.get('itemVote') != 1) {
+                    Restaurant.query(query, function (itemslist) {
+                        $scope.itemslist = itemslist[globalHighestVote].items;
+                    });
+                    //     console.log("restaurantItemClickCount = " + $scope.restaurantItemClickCount);
+                }
             };
 
             $scope.vote = function () {
@@ -44,6 +47,8 @@ window.angular.module('ngff.controllers.vote', [])
                 globalHighestVote = getHighestVote(selrest);
                 console.log("returned Global highest vote index = " + globalHighestVote);
 
+                // Setting cookie for RestaurantVote
+                $cookieStore.put('restaurantVote', 1);
 
                 function getHighestVote(votedRestaurant){
                     if(restaurantVotes.length == 0){

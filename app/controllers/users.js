@@ -59,7 +59,6 @@ exports.session = function (req, res) {
     console.log("1User session = " + User.session);
     console.log("2User name = " + req.user);
     console.log("5User name = " + req.user.username);
-
     // req.user.restaurantVoteClickCount = 0;
     // console.log("restaurantVoteClickCount = " + 
     //   req.user.restaurantVoteClickCount);

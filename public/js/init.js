@@ -13,11 +13,11 @@ var allUserSessions = [];
 
 
 var globalRestaurantVoteClickCount = [];
-// var globalRestaurantItemClickCount = [];
+var globalItemVoteClickCount = [];
 globalRestaurantVoteClickCount["JohnSmith"] = 0;
 console.log("globalRestaurantVoteClickCount = " + 
     globalRestaurantVoteClickCount["JohnSmith"]);
-
+globalItemVoteClickCount["JohnSmith"] = 0;
 // console.log("globalRestaurantItemClickCount = " + 
 //     globalRestaurantItemClickCount["JohnSmith"]);
 

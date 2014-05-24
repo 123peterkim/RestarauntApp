@@ -5,4 +5,8 @@ window.angular.module('ngff.controllers.users', [])
             $scope.showSessions = function() {
                 console.log("User session = " + User.get(session))
             }
+
+//            $scope.signIn = function () {
+//                $location.path("users/session");
+//            }
         }]);
